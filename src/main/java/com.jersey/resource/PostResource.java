@@ -11,6 +11,8 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Path("/posts")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class PostResource {
 
 
@@ -18,11 +20,10 @@ public class PostResource {
 
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
     public Response getPosts(){
         List<Post> posts = postService.getPosts();
         GenericEntity<List<Post>> entity = new GenericEntity<List<Post>>(posts) {};
-        return Response.ok(entity).build();
+        return Response.status(Response.Status.OK).entity(entity).build();
     }
 
     @GET

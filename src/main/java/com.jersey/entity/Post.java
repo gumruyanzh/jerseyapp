@@ -1,11 +1,16 @@
 package com.jersey.entity;
 
-public class Post {
+import java.io.Serializable;
+
+public class Post implements Serializable {
+
+
 
     private long id;
     private String content;
 
-    public Post(String content) {
+    public Post(long id, String content) {
+        this.id =id;
         this.content = content;
     }
 

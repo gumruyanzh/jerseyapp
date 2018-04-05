@@ -13,10 +13,10 @@ public class PostService {
     private Map<Long, Post> posts = PostRepository.getPosts();
 
     public PostService() {
-        Post post1 = new Post("new post 1");
-        Post post2 = new Post("new post 2");
+        Post post1 = new Post(1, "new post 1");
+        Post post2 = new Post(2, "new post 2");
         posts.put(1L, post1);
-        posts.put(2l, post2);
+        posts.put(2L, post2);
     }
 
     public List<Post> getPosts(){
